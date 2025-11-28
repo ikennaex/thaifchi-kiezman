@@ -1,0 +1,35 @@
+.nav-item {
+  position: relative;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #0f1f0c;
+  transition: color 0.3s ease;
+}
+
+.nav-item:hover {
+  color: #79b22c;
+}
+
+/* underline animation */
+.nav-item::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -4px;
+  background-color: #79b22c;
+  transition: width 0.3s ease;
+}
+
+.nav-item:hover::after {
+  width: 100%;
+}
+
+.mobile-link {
+  display: block;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 12px;
+  font-weight: 600;
+  color: #111;
+}

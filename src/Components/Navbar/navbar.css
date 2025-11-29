@@ -2,13 +2,9 @@
   position: relative;
   font-weight: 600;
   font-size: 1rem;
-  color: #0f1f0c;
   transition: color 0.3s ease;
 }
 
-.nav-item:hover {
-  color: #79b22c;
-}
 
 /* underline animation */
 .nav-item::after {
@@ -18,7 +14,7 @@
   height: 2px;
   left: 0;
   bottom: -4px;
-  background-color: #79b22c;
+  background-color: #1b3652;
   transition: width 0.3s ease;
 }
 

@@ -1,5 +1,4 @@
 import React from "react";
-import { img10 } from "../../imports";
 import { Link } from "react-router";
 import FadeIn from "../fadein";
 import { FaArrowRight } from "react-icons/fa";
@@ -18,12 +17,12 @@ const About = () => {
         {/* IMAGES ROW */}
         <div className="flex justify-center gap-6">
           <img
-            src={img10}
+            src= "/images/parkedtrucks.jpg"
             alt="About Gropropak"
             className="w-44 lg:w-64 h-44 lg:h-64 object-cover rounded-3xl shadow-md hover:scale-[1.03] transition"
           />
           <img
-            src={img10}
+            src= "/images/farmtruck.jpg"
             alt="About Gropropak 2"
             className="w-44 lg:w-64 h-44 lg:h-64 object-cover rounded-3xl shadow-md hover:scale-[1.03] transition"
           />

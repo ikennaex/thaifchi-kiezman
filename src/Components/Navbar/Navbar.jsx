@@ -3,7 +3,7 @@ import { Link } from "react-router";
 import { IoIosMenu } from "react-icons/io";
 import { IoClose } from "react-icons/io5";
 import { logo } from "../../imports";
-import "./navbar.css"
+import "./navbar.css";
 
 const menuItems = [
   { name: "About Us", link: "/about" },
@@ -18,10 +18,9 @@ const Navbar = () => {
   return (
     <nav className="w-full fixed top-0 left-0 z-50 bg-white/90 backdrop-blur-md shadow-sm">
       <div className="container mx-auto flex items-center justify-between px-6 lg:px-10 py-4">
-
         {/* Logo */}
         <Link to="/">
-          <img src={logo} alt="Logo" className="h-14 lg:h-20 object-contain" />
+          <img src={logo} alt="Logo" className="h-10 lg:h-16 object-contain" />
         </Link>
 
         {/* Desktop Menu */}
@@ -50,7 +49,7 @@ const Navbar = () => {
 
       {/* Mobile Menu Drawer */}
       <div
-        className={`lg:hidden bg-white px-6 py-6 space-y-6 transform transition-all duration-300 ${
+        className={`lg:hidden bg-white px-6 space-y-6 transform transition-all duration-300 ${
           open ? "max-h-96 opacity-100" : "max-h-0 opacity-0 overflow-hidden"
         }`}
       >

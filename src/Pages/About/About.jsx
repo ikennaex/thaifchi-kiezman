@@ -1,161 +1,189 @@
 import React from "react";
 import { Target, Eye, CircleCheckBig } from "lucide-react";
 import { motion } from "framer-motion";
+import CoreValues from "../../Components/CoreValues/CoreValues";
 
 const aimsandobj = [
-  "To acquire, develop, and share expertise in modern agribusiness.",
-  "To serve as financiers and facilitators of agricultural growth.",
-  "To manufacture and distribute farm equipment, inputs, and agro-allied products.",
-  "To process raw produce into finished goods for local and international markets.",
-  "To promote export and import of agricultural products and commodities.",
-  "To engage in sustainable farming practices, livestock breeding, and fisheries.",
+  "To facilitate seamless imports and exports of manufactured goods",
+  "To establish reliable logistics and transportation systems",
+  "To support food security and agribusiness development",
+  "To promote industrial growth through construction and estate development",
+  "To expand into global markets while maintaining quality and compliance standards",
 ];
 
-const corevalues = [
-  "Innovation – Embracing modern technology and best practices.",
-  "Integrity – Conducting business with honesty and accountability.",
-  "Excellence – Delivering quality solutions across our operations.",
-  "Sustainability – Promoting eco-friendly and long-term practices.",
-  "Partnership – Building strong collaborations with stakeholders.",
-];
+const fadeInUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+};
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0 },
+const staggerContainer = {
+  visible: { transition: { staggerChildren: 0.2 } },
 };
 
 const About = () => {
   return (
-    <div className="bg-[#f0f9f2] py-12">
-      <div className="container mx-auto px-4">
-        {/* About Section */}
+    <section className="relative bg-gradient-to-b from-orange-50 via-white to-white overflow-hidden">
+      {/* Subtle background pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,#f97316,transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_70%,#1e40af,transparent_50%)]" />
+      </div>
+
+      <div className="relative container mx-auto px-6 max-w-7xl py-24 lg:py-32">
+        {/* WHO WE ARE */}
         <motion.div
-          className="flex justify-center"
+          className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-32"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          variants={fadeUp}
+          viewport={{ once: true, margin: "-100px" }}
+          variants={staggerContainer}
         >
-          <div className="flex flex-col items-center text-center gap-4 sm:gap-6 w-full max-w-3xl px-2">
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#1b4808]">
-              About <span className="text-[#3a6b0d]">GROPROPAK AFRICA LTD</span>
+          <motion.div variants={fadeInUp} className="space-y-6 lg:space-y-8">
+            <div className="flex mb-10">
+              <p className="border rounded-full px-6 py-2 text-sm font-semibold text-white bg-customOrange shadow-sm">
+                Who are We
+              </p>
+            </div>
+            <h2 className="text-3xl lg:text-5xl font-bold text-gray-900 leading-tight">
+              Building Tomorrow Through{" "}
+              <span className="text-customOrange">Excellence</span> &{" "}
+              <span className="text-customBlue">Innovation</span>
             </h2>
-            <p className="text-gray-800 text-base sm:text-lg leading-relaxed mt-2">
-              Gropropak Africa Ltd is a modern agribusiness and agro-allied company
-              established to transform agriculture into a sustainable,
-              technology-driven, and profitable enterprise across Africa. With a
-              diversified portfolio that spans farming, processing, manufacturing,
-              equipment supply, and trading, we empower farmers, drive food
-              security, and create wealth through agricultural innovation.
+            <p className="text-gray-600 text-base lg:text-lg leading-relaxed">
+              Thaifchi-Kiezman Ltd. is a diversified conglomerate delivering
+              value-driven solutions across international trade, construction,
+              agribusiness, logistics, transportation, and consumer markets.
+            </p>
+          </motion.div>
+
+          <motion.div variants={fadeInUp} className="relative group">
+            <div className="absolute -inset-1 bg-gradient-to-r from-customOrange to-customBlue rounded-3xl blur-xl opacity-30 group-hover:opacity-50 transition duration-1000" />
+            <img
+              src="/images/cargo.jpg"
+              alt="Thaifchi-Kiezman Operations"
+              className="relative rounded-3xl shadow-2xl object-cover w-full h-96 lg:h-[520px] transition-transform duration-700 group-hover:scale-105"
+            />
+          </motion.div>
+        </motion.div>
+
+        {/* MISSION & VISION */}
+        <motion.div
+          className="grid lg:grid-cols-2 gap-8 lg:gap-16"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={staggerContainer}
+        >
+          {/* Mission */}
+          <motion.div
+            variants={fadeInUp}
+            className="group relative bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl overflow-hidden border border-gray-100 hover:shadow-2xl transition-all duration-500"
+          >
+            <div className="relative overflow-hidden rounded-t-3xl">
+              <video
+                src="/videos/mission.mp4"
+                className="w-full h-80 object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                autoPlay
+                muted
+                loop
+                playsInline
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+            </div>
+
+            <div className="p-6 lg:p-8 space-y-4">
+              <div className="flex items-center gap-4">
+                <div className="p-3 bg-customBlue/10 rounded-2xl">
+                  <Target className="w-8 h-8 text-customBlue" />
+                </div>
+                <h3 className="text-xl lg:text-2xl font-bold text-customBlue">
+                  Our Mission
+                </h3>
+              </div>
+              <p className="text-gray-600 text-base lg:text-lg leading-relaxed">
+                To deliver high-quality products and services across diverse
+                industries through innovation, professionalism, and strategic
+                partnerships, while creating long-term value for clients,
+                stakeholders, and communities.
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Vision */}
+          <motion.div
+            variants={fadeInUp}
+            className="group relative bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl overflow-hidden border border-gray-100 hover:shadow-2xl transition-all duration-500"
+          >
+            <div className="relative overflow-hidden rounded-t-3xl">
+              <video
+                src="/videos/vision.mp4"
+                className="w-full h-80 object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                autoPlay
+                muted
+                loop
+                playsInline
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+            </div>
+
+            <div className="p-6 lg:p-8 space-y-4">
+              <div className="flex items-center gap-4">
+                <div className="p-3 bg-customBlue/10 rounded-2xl">
+                  <Eye className="w-8 h-8 text-customBlue" />
+                </div>
+                <h3 className="text-xl lg:text-2xl font-bold text-customBlue">
+                  Our Vision
+                </h3>
+              </div>
+              <p className="text-gray-600 text-base lg:text-lg leading-relaxed">
+                To be recognized as a leading diversified conglomerate in
+                Nigeria and Africa driving excellence, sustainability, and
+                economic transformation.
+              </p>
+            </div>
+          </motion.div>
+        </motion.div>
+
+        {/* AIMS & OBJECTIVES */}
+        <motion.div
+          className="mt-24 max-w-5xl mx-auto"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={staggerContainer}
+        >
+          <div className="flex justify-center mb-10">
+            <p className="border rounded-full px-6 py-2 text-sm font-semibold text-white bg-customOrange shadow-sm">
+              Aims and Objectives
             </p>
           </div>
-        </motion.div>
 
-        {/* Mission & Vision */}
-        <motion.div
-          className="flex flex-col lg:flex-row gap-8 lg:gap-10 mt-12 mb-12"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={{
-            visible: {
-              transition: { staggerChildren: 0.3 },
-            },
-          }}
-        >
-          {[
-            {
-              icon: <Target className="w-6 h-6 text-[#1b4808]" />,
-              title: "MISSION STATEMENT",
-              desc: "To revolutionize agriculture in Africa by providing innovative solutions, high-quality products, and sustainable practices that enhance productivity, food security, and economic growth.",
-            },
-            {
-              icon: <Eye className="w-6 h-6 text-[#1b4808]" />,
-              title: "VISION STATEMENT",
-              desc: "To become Africa’s leading agribusiness powerhouse, recognized for excellence in farming, processing, manufacturing, and global agricultural trade.",
-            },
-          ].map((item, idx) => (
-            <motion.div
-              key={idx}
-              className="w-full lg:w-1/2 bg-white shadow-lg rounded-xl p-6 flex flex-col gap-4"
-              variants={fadeUp}
-              transition={{ duration: 0.8, delay: idx * 0.2 }}
-            >
-              <div className="flex items-center gap-3">
-                {item.icon}
-                <h3 className="text-xl font-bold text-[#1b4808]">{item.title}</h3>
-              </div>
-              <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
-                {item.desc}
-              </p>
-            </motion.div>
-          ))}
-        </motion.div>
-
-        {/* Aims & Objectives */}
-        <motion.div
-          className="mb-12"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
-          <motion.h2
-            className="text-3xl sm:text-4xl font-bold mb-6 text-center text-[#1b4808]"
-            variants={fadeUp}
-            transition={{ duration: 0.8 }}
-          >
-            Aims & Objectives
-          </motion.h2>
-          <ul className="space-y-3">
-            {aimsandobj.map((item, index) => (
-              <motion.li
-                key={index}
-                className="flex items-start gap-3 text-gray-800 text-base sm:text-lg"
-                variants={fadeUp}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-              >
-                <CircleCheckBig className="flex-shrink-0 w-5 h-5 text-[#3a6b0d]" />
-                <span>{item}</span>
-              </motion.li>
-            ))}
-          </ul>
-        </motion.div>
-
-        {/* Core Values */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={{
-            visible: { transition: { staggerChildren: 0.2 } },
-          }}
-        >
-          <motion.h2
-            className="text-3xl sm:text-4xl font-bold mb-8 text-center text-[#1b4808]"
-            variants={fadeUp}
-            transition={{ duration: 0.8 }}
-          >
-            Core Values
-          </motion.h2>
-          <div className="grid md:grid-cols-2 gap-4">
-            {corevalues.map((value, index) => (
+          <div className="grid md:grid-cols-2 gap-6">
+            {aimsandobj.map((aim, index) => (
               <motion.div
                 key={index}
-                className="flex items-start bg-white rounded-lg shadow p-4 gap-3"
-                variants={fadeUp}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                variants={fadeInUp}
+                className="group relative bg-white/70 backdrop-blur-sm border border-gray-200/50 rounded-2xl p-6 lg:p-8 hover:bg-white hover:shadow-xl transition-all duration-400"
               >
-                <div className="bg-[#3a6b0d] text-white font-bold px-3 py-2 rounded-full flex-shrink-0">
-                  {index + 1}
+                <div className="flex items-start gap-5">
+                  <div className="mt-1 p-2 bg-customOrange/10 rounded-xl group-hover:scale-110 transition-transform">
+                    <CircleCheckBig className="w-7 h-7 text-customOrange" />
+                  </div>
+                  <p className="text-gray-700 text-base lg:text-lg leading-relaxed">
+                    {aim}
+                  </p>
                 </div>
-                <p className="text-gray-800 text-sm sm:text-base">{value}</p>
               </motion.div>
             ))}
           </div>
         </motion.div>
+
+        {/* CORE VALUES */}
+        <div className="mt-32">
+          <CoreValues />
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
